@@ -1,57 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>PaperQA Web</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 40px; }
-    h1 { color: #333; }
-    textarea { width: 100%; min-height: 80px; }
-    #answer { margin-top: 20px; padding: 10px; background: #f9f9f9; border-radius: 5px; }
-    .error { color: red; margin-top: 10px; }
-    button[disabled] { opacity: 0.6; }
-  </style>
-</head>
-<body>
-  <h1>Ask a Question About a Paper</h1>
-  <form id="qaForm">
-    <input type="file" name="file" required><br><br>
-    <textarea name="question" placeholder="Ask your question..." required></textarea><br><br>
-    <button type="submit">Submit</button>
-  </form>
-
-  <h2>Answer:</h2>
-  <div id="answer"></div>
-  <div class="error" id="error"></div>
-
-  <script>
-    const formElem = document.getElementById("qaForm");
-    const answerElem = document.getElementById("answer");
-    const errorElem = document.getElementById("error");
-    const submitBtn = formElem.querySelector("button[type='submit']");
-
-    formElem.onsubmit = async (e) => {
-      e.preventDefault();
-      answerElem.innerText = "";
-      errorElem.innerText = "";
-      submitBtn.disabled = true;
-      const form = new FormData(e.target);
-      try {
-        const res = await fetch("http://localhost:8000/query", {
-          method: "POST",
-          body: form
-        });
-        if (!res.ok) {
-          const err = await res.text();
-          throw new Error(err);
-        }
-        const data = await res.json();
-        answerElem.innerText = data.answer;
-      } catch (err) {
-        errorElem.innerText = "Error: " + (err.message || err);
-      } finally {
-        submitBtn.disabled = false;
-      }
-    }
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

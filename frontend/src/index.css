@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+}
+
+.github-card {
+  @apply bg-github-bg-secondary border border-github-border rounded-md;
+}
+
+.github-input {
+  @apply bg-github-bg border border-github-border rounded-md text-github-text transition-colors duration-150;
+}
+
+.github-input:focus {
+  @apply border-github-primary outline-none;
+  box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.15);
+}
+
+.github-button {
+  @apply bg-github-accent border border-white/10 rounded-md text-github-text font-medium transition-all duration-150;
+}
+
+.github-button:hover:not(:disabled) {
+  @apply bg-github-accent-hover;
+}
+
+.github-button-secondary {
+  @apply bg-github-bg-tertiary border border-github-border text-github-text;
+}
+
+.github-button-secondary:hover:not(:disabled) {
+  @apply border-github-border border-github-text-secondary;
+}
+
+.github-tab {
+  @apply border-b-2 border-transparent text-github-text-secondary transition-all duration-150;
+}
+
+.github-tab.active {
+  @apply border-github-primary text-github-text;
+}
+
+.github-tab:hover {
+  @apply text-github-text;
+}

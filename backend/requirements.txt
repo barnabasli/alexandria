@@ -4,3 +4,11 @@ paper-qa>=5
 python-multipart
 openai
 python-dotenv
+sqlalchemy
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+email-validator
+psycopg2-binary
+supabase
+jose
