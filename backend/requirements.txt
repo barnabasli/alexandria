@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+paper-qa>=5
+python-multipart
+openai
+python-dotenv
