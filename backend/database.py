@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, Column, String, DateTime, ForeignKey, Text, Enum
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.dialects.postgresql import UUID, TIMESTAMP
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 from datetime import datetime
@@ -42,8 +42,11 @@ class User(Base):
     id = Column(UUID(as_uuid=True), primary_key=True)
     email = Column(String, unique=True, nullable=False)
     name = Column(String)
+    bio = Column(Text)
+    profile_image_url = Column(String)
     role = Column(Enum(UserRole), default=UserRole.MEMBER.value, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(TIMESTAMP(timezone=True), default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relationships
     created_organizations = relationship("Organization", back_populates="created_by_user")

@@ -72,7 +72,7 @@ const OrgAuth = ({ onLogin, onRegister, onSwitchToUser }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="border-b border-github-border bg-github-bg-secondary">
+      <header className="dark-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
@@ -82,7 +82,7 @@ const OrgAuth = ({ onLogin, onRegister, onSwitchToUser }) => {
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-github-text">PaperQA</h1>
+                <h1 className="text-xl font-semibold text-github-text">Alexandria</h1>
                 <p className="text-xs text-github-text-muted">Organization Admin Portal</p>
               </div>
             </div>
@@ -104,7 +104,7 @@ const OrgAuth = ({ onLogin, onRegister, onSwitchToUser }) => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Organization Registration Form */}
-            <div className="github-card p-6">
+            <div className="dark-card p-6">
               <div className="flex items-center mb-6">
                 <div className="w-8 h-8 bg-github-accent rounded-md flex items-center justify-center mr-3">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -179,7 +179,7 @@ const OrgAuth = ({ onLogin, onRegister, onSwitchToUser }) => {
             </div>
 
             {/* Organization Login Form */}
-            <div className="github-card p-6">
+            <div className="dark-card p-6">
               <div className="flex items-center mb-6">
                 <div className="w-8 h-8 bg-github-primary rounded-md flex items-center justify-center mr-3">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -41,7 +41,7 @@ const OrgSearch = ({ user, authToken, onBack }) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b border-github-border bg-github-bg-secondary">
+      <header className="dark-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
@@ -67,7 +67,7 @@ const OrgSearch = ({ user, authToken, onBack }) => {
 
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="github-card p-6 mb-8">
+          <div className="dark-card p-6 mb-8">
             <h2 className="text-lg font-semibold mb-4">Search Organizations</h2>
             <div className="flex space-x-4">
               <input
@@ -88,11 +88,11 @@ const OrgSearch = ({ user, authToken, onBack }) => {
           </div>
 
           {organizations.length > 0 && (
-            <div className="github-card p-6">
+            <div className="dark-card p-6">
               <h3 className="text-lg font-semibold mb-6">Search Results</h3>
               <div className="space-y-4">
                 {organizations.map(org => (
-                  <div key={org.id} className="github-card p-4">
+                  <div key={org.id} className="dark-card p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
                         <h4 className="font-medium text-github-text mb-1">{org.name}</h4>

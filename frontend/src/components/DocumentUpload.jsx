@@ -45,7 +45,7 @@ const DocumentUpload = ({ organizationId, authToken, onUploadComplete }) => {
   };
 
   return (
-    <div className="github-card p-6">
+            <div className="dark-card p-6">
       <h3 className="text-lg font-semibold mb-6">Upload new documents</h3>
       
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -86,7 +86,7 @@ const DocumentUpload = ({ organizationId, authToken, onUploadComplete }) => {
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="github-input w-full px-3 py-2 text-sm"
+            className="apple-input w-full px-3 py-2 text-sm"
             placeholder="Enter document title"
           />
         </div>

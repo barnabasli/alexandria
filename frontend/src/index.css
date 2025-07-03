@@ -2,47 +2,243 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apple-inspired Theme Variables */
+:root {
+  --bg-primary: #0d1b2a;
+  --bg-secondary: #1b263b;
+  --bg-tertiary: #415a77;
+  --text-primary: #e0e1dd;
+  --text-secondary: #778da9;
+  --text-muted: #415a77;
+  --border: rgba(119, 141, 169, 0.2);
+  --accent: #007AFF;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
 }
 
-.github-card {
-  @apply bg-github-bg-secondary border border-github-border rounded-md;
+/* Global Apple-inspired theme overrides */
+* {
+  box-sizing: border-box;
 }
 
-.github-input {
-  @apply bg-github-bg border border-github-border rounded-md text-github-text transition-colors duration-150;
+/* Scrollbar styling for Apple-inspired theme */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.github-input:focus {
-  @apply border-github-primary outline-none;
-  box-shadow: 0 0 0 3px rgba(56, 139, 253, 0.15);
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
 }
 
-.github-button {
-  @apply bg-github-accent border border-white/10 rounded-md text-github-text font-medium transition-all duration-150;
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
 }
 
-.github-button:hover:not(:disabled) {
-  @apply bg-github-accent-hover;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
-.github-button-secondary {
-  @apply bg-github-bg-tertiary border border-github-border text-github-text;
+.apple-card {
+  @apply bg-oxford-blue border border-silver-lake-blue rounded-md;
+  background: rgba(27, 38, 59, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.github-button-secondary:hover:not(:disabled) {
-  @apply border-github-border border-github-text-secondary;
+.apple-input {
+  @apply bg-rich-black border border-silver-lake-blue rounded-md text-platinum transition-colors duration-150;
+  background: var(--bg-primary);
+  border: 1px solid rgba(119, 141, 169, 0.3);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
 }
 
-.github-tab {
-  @apply border-b-2 border-transparent text-github-text-secondary transition-all duration-150;
+.apple-input:focus {
+  @apply border-apple-blue outline-none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
 }
 
-.github-tab.active {
-  @apply border-github-primary text-github-text;
+.apple-input::placeholder {
+  color: var(--text-muted);
 }
 
-.github-tab:hover {
-  @apply text-github-text;
+.apple-button {
+  @apply bg-apple-blue border border-white/10 rounded-md text-platinum font-medium transition-all duration-150;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.apple-button:hover:not(:disabled) {
+  @apply bg-apple-blue-hover;
+  background: #0056CC;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.apple-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.apple-button-secondary {
+  @apply bg-yinmn-blue border border-silver-lake-blue text-platinum;
+  background: rgba(65, 90, 119, 0.4);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.apple-button-secondary:hover:not(:disabled) {
+  @apply border-silver-lake-blue border-silver-lake-blue;
+  background: rgba(65, 90, 119, 0.6);
+  border-color: rgba(224, 225, 221, 0.3);
+}
+
+.apple-tab {
+  @apply border-b-2 border-transparent text-silver-lake-blue transition-all duration-150;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  padding: 12px 16px;
+  font-weight: 500;
+}
+
+.apple-tab.active {
+  @apply border-apple-blue text-platinum;
+  border-bottom-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.apple-tab:hover {
+  @apply text-platinum;
+  color: var(--text-primary);
+}
+
+/* Enhanced Apple-inspired theme components */
+.dark-header {
+  background: rgba(13, 27, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.dark-card {
+  background: rgba(27, 38, 59, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark-input {
+  background: var(--bg-primary);
+  border: 1px solid rgba(119, 141, 169, 0.3);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+.dark-input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.dark-input::placeholder {
+  color: var(--text-muted);
+}
+
+.dark-button {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.dark-button:hover:not(:disabled) {
+  background: #0056CC;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dark-button-secondary {
+  background: rgba(65, 90, 119, 0.4);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark-button-secondary:hover:not(:disabled) {
+  background: rgba(65, 90, 119, 0.6);
+  border-color: rgba(224, 225, 221, 0.3);
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 12rem;
+  background: rgba(27, 38, 59, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  color: var(--text-primary);
+  background: rgba(65, 90, 119, 0.4);
+}
+
+.dropdown-item.active {
+  color: var(--text-primary);
+  background: rgba(65, 90, 119, 0.6);
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.25rem 0;
 }

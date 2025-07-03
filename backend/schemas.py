@@ -18,7 +18,10 @@ class UserLogin(BaseModel):
 class User(UserBase):
     id: UUID
     role: str
+    bio: Optional[str] = None
+    profile_image_url: Optional[str] = None
     created_at: datetime
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True
@@ -43,10 +46,7 @@ class OrganizationSearch(BaseModel):
     created_at: datetime
     member_count: int
     is_member: bool
-    membership_status: Optional[str]
-
-    class Config:
-        from_attributes = True
+    membership_status: Optional[str] = None
 
 class MembershipBase(BaseModel):
     user_id: UUID
@@ -90,9 +90,16 @@ class QueryRequest(BaseModel):
     question: str
     organization_id: UUID
 
+class SourceInfo(BaseModel):
+    url: str
+    title: str
+    citation: str
+    relevance_score: float
+
 class QueryResponse(BaseModel):
     answer: str
     sources: Optional[List[str]] = None
+    enhanced_sources: Optional[List[SourceInfo]] = None
 
 class UserOrganization(BaseModel):
     organization: Organization

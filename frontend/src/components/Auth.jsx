@@ -68,7 +68,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="border-b border-github-border bg-github-bg-secondary">
+      <header className="dark-header">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
@@ -78,7 +78,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                 </svg>
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-github-text">PaperQA</h1>
+                <h1 className="text-xl font-semibold text-github-text">Alexandria</h1>
                 <p className="text-xs text-github-text-muted">AI-powered document analysis</p>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold mb-4 text-github-text">
-              Welcome to PaperQA
+              Welcome to Alexandria
             </h2>
             <p className="text-lg text-github-text-secondary max-w-2xl mx-auto">
               Upload your organization's documents and ask questions to get instant, AI-powered insights
@@ -100,7 +100,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Registration Form */}
-            <div className="github-card p-6">
+            <div className="dark-card p-6">
               <div className="flex items-center mb-6">
                 <div className="w-8 h-8 bg-github-accent rounded-md flex items-center justify-center mr-3">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                     required 
                     value={registerData.name}
                     onChange={handleRegisterInputChange}
-                    className="github-input w-full px-3 py-2 text-sm"
+                    className="apple-input w-full px-3 py-2 text-sm"
                   />
                 </div>
                 
@@ -133,7 +133,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                     required 
                     value={registerData.email}
                     onChange={handleRegisterInputChange}
-                    className="github-input w-full px-3 py-2 text-sm"
+                    className="apple-input w-full px-3 py-2 text-sm"
                   />
                 </div>
                 
@@ -146,7 +146,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                     required 
                     value={registerData.password}
                     onChange={handleRegisterInputChange}
-                    className="github-input w-full px-3 py-2 text-sm"
+                    className="apple-input w-full px-3 py-2 text-sm"
                   />
                 </div>
                 
@@ -159,7 +159,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                     placeholder="Leave empty to join existing org" 
                     value={registerData.organization_name}
                     onChange={handleRegisterInputChange}
-                    className="github-input w-full px-3 py-2 text-sm"
+                    className="apple-input w-full px-3 py-2 text-sm"
                   />
                 </div>
                 
@@ -174,7 +174,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
             </div>
 
             {/* Login Form */}
-            <div className="github-card p-6">
+            <div className="dark-card p-6">
               <div className="flex items-center mb-6">
                 <div className="w-8 h-8 bg-github-primary rounded-md flex items-center justify-center mr-3">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,7 +194,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                     required 
                     value={loginData.email}
                     onChange={handleLoginInputChange}
-                    className="github-input w-full px-3 py-2 text-sm"
+                    className="apple-input w-full px-3 py-2 text-sm"
                   />
                 </div>
                 
@@ -207,7 +207,7 @@ const Auth = ({ onLogin, onRegister, onSwitchToOrg }) => {
                     required 
                     value={loginData.password}
                     onChange={handleLoginInputChange}
-                    className="github-input w-full px-3 py-2 text-sm"
+                    className="apple-input w-full px-3 py-2 text-sm"
                   />
                 </div>
                 

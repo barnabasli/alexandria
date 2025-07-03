@@ -59,6 +59,10 @@ function App() {
     }
   };
 
+  const handleProfileUpdate = (updatedUser) => {
+    setCurrentUser(updatedUser);
+  };
+
   const handleLogout = async () => {
     try {
       if (authToken) {
@@ -80,7 +84,20 @@ function App() {
       <div className="min-h-screen bg-github-bg flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-github-primary mx-auto mb-4"></div>
-          <p className="text-sm text-github-text-secondary">Loading PaperQA...</p>
+          <p className="text-sm text-github-text-secondary">Loading Alexandria...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Ensure we have a valid view state
+  if (!view) {
+    setView('auth');
+    return (
+      <div className="min-h-screen bg-github-bg flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-github-primary mx-auto mb-4"></div>
+          <p className="text-sm text-github-text-secondary">Initializing...</p>
         </div>
       </div>
     );
@@ -110,6 +127,7 @@ function App() {
           authToken={authToken}
           onLogout={handleLogout}
           onViewOrgSearch={() => setView('org-search')}
+          onProfileUpdate={handleProfileUpdate}
         />
       )}
       

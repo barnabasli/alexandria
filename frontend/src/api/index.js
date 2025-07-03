@@ -102,6 +102,13 @@ export const orgAPI = {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     return handleResponse(response);
+  },
+
+  getUserRole: async (orgId, token) => {
+    const response = await fetch(`${API_BASE}/organizations/${orgId}/user-role`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    return handleResponse(response);
   }
 };
 
@@ -181,5 +188,55 @@ export const documentAPI = {
         }
       }
     }
+  },
+
+  getSourceInfo: async (orgId, filename, token) => {
+    const response = await fetch(`${API_BASE}/papers/${orgId}/sources/${filename}/info`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    return handleResponse(response);
+  },
+
+  delete: async (paperId, token) => {
+    const response = await fetch(`${API_BASE}/papers/${paperId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    return handleResponse(response);
+  }
+};
+
+// Profile API
+export const profileAPI = {
+  uploadImage: async (file, token) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await fetch(`${API_BASE}/upload-profile-image`, {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${token}` },
+      body: formData
+    });
+    return handleResponse(response);
+  },
+
+  updateProfile: async (profileData, token) => {
+    const formData = new FormData();
+    if (profileData.name) formData.append('name', profileData.name);
+    if (profileData.bio) formData.append('bio', profileData.bio);
+
+    const response = await fetch(`${API_BASE}/update-profile`, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${token}` },
+      body: formData
+    });
+    return handleResponse(response);
+  },
+
+  getProfile: async (token) => {
+    const response = await fetch(`${API_BASE}/profile`, {
+      headers: { 'Authorization': `Bearer ${token}` }
+    });
+    return handleResponse(response);
   }
 }; 
